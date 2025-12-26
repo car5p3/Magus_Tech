@@ -1,0 +1,3 @@
+/* App-specific styles (Tailwind directives live in src/index.css) */
+@import "tailwindcss";
+@plugin "daisyui";

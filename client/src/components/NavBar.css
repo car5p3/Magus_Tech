@@ -1,0 +1,13 @@
+/* Glassy navbar to match Hero: subtle border, backdrop blur, and spacing */
+.navbar-glass {
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-brand { display: inline-flex; align-items: center; gap: .5rem; }
+.nav-brand .logo-text { font-weight: 800; background-clip: text; -webkit-background-clip: text; color: transparent; }
+
+.nav-actions a.btn { padding-left: 1rem; padding-right: 1rem; }
