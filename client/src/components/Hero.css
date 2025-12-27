@@ -1,0 +1,33 @@
+/* Animated blurred blobs used as a subtle motion background */
+.hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.blob { position: absolute; border-radius: 9999px; filter: blur(80px); opacity: 0.75; transform: translate3d(0,0,0); }
+/* Using the new theme: accent (#4aa8f4) and light text (#fdfdfd) */
+.blob.b1 { width: 520px; height: 520px; left: -10%; top: 6%; background: radial-gradient(circle at 30% 30%, rgba(74,168,244,0.92), rgba(253,253,253,0.06)); animation: blob 14s infinite; }
+.blob.b2 { width: 380px; height: 380px; right: -6%; top: 4%; background: radial-gradient(circle at 70% 30%, rgba(74,168,244,0.72), rgba(253,253,253,0.04)); animation: blob 18s infinite; animation-delay: -3s; }
+.blob.b3 { width: 440px; height: 440px; left: 28%; bottom: -12%; background: radial-gradient(circle at 40% 60%, rgba(74,168,244,0.6), rgba(4,13,28,0.08)); animation: blob 16s infinite; animation-delay: -6s; }
+
+@keyframes blob {
+  0% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(30px,-50px) scale(1.05); }
+  66% { transform: translate(-20px,40px) scale(0.95); }
+  100% { transform: translate(0,0) scale(1); }
+}
+
+/* Animated gradient for headings (accent -> light) */
+.text-gradient-animate {
+  background-image: linear-gradient(90deg, var(--magus-accent), var(--magus-text));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Ensure the hero content sits above the animated background */
+.hero-content-wrapper { position: relative; z-index: 10; }

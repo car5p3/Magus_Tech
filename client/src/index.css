@@ -1,0 +1,66 @@
+/* Font: Insignia Roman (TTF placed at src/assets/fonts/Insignia Roman/Insignia Roman.ttf) */
+/*
+  Font files included in the repo:
+  - src/assets/fonts/Insignia Roman/Insignia Roman.ttf
+*/
+@font-face {
+  font-family: 'Insignia Roman';
+  src: url('/src/assets/fonts/Insignia Roman/Insignia Roman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Map bold to same TTF if a separate bold file isn't provided */
+@font-face {
+  font-family: 'Insignia Roman';
+  src: url('/src/assets/fonts/Insignia Roman/Insignia Roman.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Brand tokens and utilities */
+:root {
+  --magus-bg: #040d1c; /* main background */
+  --magus-text: #fdfdfd; /* primary text (white) */
+  --magus-accent: #4aa8f4; /* accent blue */
+}
+
+/* Base background, text and default font */
+body {
+  background-color: var(--magus-bg);
+  color: var(--magus-text);
+  font-family: 'Insignia Roman', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* Ensure Tailwind/Daisy surfaces that use bg-base-200 align */
+.bg-base-200 {
+  background-color: var(--magus-bg) !important;
+  color: var(--magus-text);
+}
+
+/* Text gradient that clips to text (accent -> text for good contrast) */
+.text-brand-gradient {
+  background-image: linear-gradient(90deg, var(--magus-accent), var(--magus-text));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Block/background gradient */
+.bg-brand-gradient {
+  background-image: linear-gradient(90deg, var(--magus-accent), var(--magus-text));
+}
+
+/* Make primary buttons use the brand gradient (accent -> light) */
+.btn.btn-primary {
+  background-image: linear-gradient(90deg, var(--magus-accent), var(--magus-text));
+  border: none;
+  color: var(--magus-bg);
+  box-shadow: 0 8px 24px rgba(74,168,244,0.12);
+}
+
+/* Subtle navbar tint/border in brand hue */
+.navbar-glass {
+  border: 1px solid rgba(74,168,244,0.08);
+} 
